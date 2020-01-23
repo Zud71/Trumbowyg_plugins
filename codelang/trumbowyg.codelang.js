@@ -3,7 +3,7 @@
 
     $.extend(true, $.trumbowyg, {
         langs: {
-            // jshint camelcase:false
+            
             en: {
                 codeLang: 'CODE'
             },
@@ -12,7 +12,7 @@
             }
         }
     });
-    // jshint camelcase:true
+    
 
     var defaultOptions = {
         codeList: [
@@ -25,7 +25,7 @@
         ]
     };
 
-    // Add dropdown with web safe fonts
+
     $.extend(true, $.trumbowyg, {
         plugins: {
             codelang: {
@@ -81,9 +81,7 @@
     }
 
 
-    /*
- * GetSelectionParentElement
- */
+
     function getSelectionParentElement() {
         var parentEl = null,
             selection;
@@ -103,21 +101,14 @@
         return parentEl;
     }
 
-    /*
-  * Strip
-  * returns a text without HTML tags
-  */
+
     function strip(html) {
         var tmp = document.createElement('DIV');
         tmp.innerHTML = html;
         return tmp.textContent || tmp.innerText || '';
     }
 
-    /*
-     * UnwrapCode
-     * ADD/FIX: to improve, works but can be better
-     * "paranoic" solution
-     */
+
     function unwrapCode() {
         var container = null;
 
@@ -130,7 +121,7 @@
             }
         }
 
-        //'paranoic' unwrap
+
         var ispre = $(container).contents().closest('pre').length;
         var iscode = $(container).contents().closest('code').length;
 
