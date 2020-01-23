@@ -64,6 +64,10 @@
                             }
                             else {
                                 trumbowyg.execCmd('insertHTML', '<pre><code class="' + lang.family + '">' + strip(text) + '</code></pre>');
+                                /*var html = '<pre><code class="' + lang.family + '">' + strip(text) + '</code></pre>';
+                                var node = $(html)[0];
+                                trumbowyg.range.deleteContents();
+                                trumbowyg.range.insertNode(node);*/
                             }
                         } catch (e) {
                         }
