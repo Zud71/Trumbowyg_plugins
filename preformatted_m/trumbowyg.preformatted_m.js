@@ -28,8 +28,7 @@
                                         return unwrapCode();
                                     }
                                     else {
-                                        //trumbowyg.execCmd('insertHTML', '<code>' + strip(text) + '</code>');
-
+                                     
                                         var html = '<code>' + strip(text) + '</code>';
                                         var node = $(html)[0];
                                         trumbowyg.range.deleteContents();

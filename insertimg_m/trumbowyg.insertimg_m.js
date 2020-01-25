@@ -44,7 +44,7 @@
                         fn: function () {
                             var insertimg_mCallback = function (v) {
 
-                                //<a class='lightzoom' href='/content/priora_bamper_remont/img/img4.jpg' ><img src='/content/priora_bamper_remont/img/img4.jpg' alt='приора авария удар в зад' class='img-thumbnail minimized rounded mx-auto d-block'></a><br>
+                         
                                 var html = "<a class='lightzoom' href='";
 
                                 if (v.inqimg) {

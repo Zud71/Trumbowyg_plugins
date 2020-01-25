@@ -3,7 +3,7 @@
 
     $.extend(true, $.trumbowyg, {
         langs: {
-            
+           
             en: {
                 codeLang: 'CODE'
             },
@@ -12,17 +12,10 @@
             }
         }
     });
-    
+   
 
     var defaultOptions = {
-        codeList: [
-            { name: 'C#', family: 'cs post-code'},
-            { name: 'NO', family: 'nohighlight post-code' },
-            { name: 'Bash', family: 'Bash post-code' },
-            { name: 'nginx', family: 'nginx post-code' },
-            { name: 'plaintext', family: 'plaintext post-code' },
-            { name: 'powershell', family: 'powershell post-code' }
-        ]
+        codeList: hljs.listLanguages()
     };
 
 
@@ -48,9 +41,9 @@
     function buildDropdown(trumbowyg) {
         var dropdown = [];
 
-        $.each(trumbowyg.o.plugins.codelang.codeList, function (index, lang) {
+        $.each(trumbowyg.o.plugins.codelang.codeList, function (index, value) {
             trumbowyg.addBtnDef('codelang_' + index, {
-                title: '<span >' + lang.name + '</span>',
+                title: '<span >' + value + '</span>',
                 hasIcon: false,
                 fn: function () {
 
@@ -63,11 +56,8 @@
                                 return unwrapCode();
                             }
                             else {
-                                trumbowyg.execCmd('insertHTML', '<pre><code class="' + lang.family + '">' + strip(text) + '</code></pre>');
-                                /*var html = '<pre><code class="' + lang.family + '">' + strip(text) + '</code></pre>';
-                                var node = $(html)[0];
-                                trumbowyg.range.deleteContents();
-                                trumbowyg.range.insertNode(node);*/
+                                trumbowyg.execCmd('insertHTML', '<pre><code class="' + value + ' hljs">' + strip(text) + '</code></pre>');
+                             
                             }
                         } catch (e) {
                         }
@@ -81,7 +71,9 @@
     }
 
 
-
+    /*
+ * GetSelectionParentElement
+ */
     function getSelectionParentElement() {
         var parentEl = null,
             selection;
