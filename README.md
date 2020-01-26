@@ -1,4 +1,4 @@
-# Trumbowyg_plugins
+# Trumbowyg plugins
 Trumbowyg plugins
 
 <b>codelang</b> - highlight.js Syntax highlighting for the Web<br>
